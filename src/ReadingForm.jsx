@@ -12,14 +12,19 @@ class ReadingForm extends Component {
     render() {
         return (
             <form>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Example label</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input" />
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput2">Another label</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input" />
-                </div>
+                <fieldset>
+                    <div class="form-group">
+                        <label for="bloodGlucose">Bg, mmol / L</label>
+                        <input type="number" class="form-control" id="bloodGlucose" />
+                    </div>
+                    <div class="form-group">
+                        <label for="note">Note:</label>
+                        <input type="text" class="form-control" id="note" placeholder="7 units of insulin, etc." />
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                </fieldset>
             </form>
         );
     };

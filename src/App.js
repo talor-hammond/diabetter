@@ -10,7 +10,7 @@ class App extends Component {
         <ReadingForm />
       </div>
     );
-  }
-}
+  };
+};
 
 export default App;
