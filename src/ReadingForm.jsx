@@ -10,7 +10,7 @@ class ReadingForm extends Component {
     };
 
     updateFormDetails(e) {
-        console.log(e.target.value);
+        console.log(`Name: ${e.target.name}, Value:; ${e.target.value}`);
     };
 
     render() {
@@ -19,11 +19,11 @@ class ReadingForm extends Component {
                 <fieldset>
                     <div className="form-group">
                         <label htmlFor="bloodGlucose">Bg, mmol / L</label>
-                        <input type="number" className="form-control" id="bloodGlucose" onChange={(e) => this.updateFormDetails(e)}/>
+                        <input type="number" className="form-control" name="bloodGlucose" id="bloodGlucose" onChange={(e) => this.updateFormDetails(e)}/>
                     </div>
                     <div className="form-group">
                         <label htmlFor="note">Note:</label>
-                        <input type="text" className="form-control" id="note" placeholder="7 units of insulin, etc." onChange={(e) => this.updateFormDetails(e)}/>
+                        <input type="text" className="form-control" name="note" id="note" placeholder="7 units of insulin, etc." onChange={(e) => this.updateFormDetails(e)}/>
                     </div>
                     
                     <button type="submit" className="btn btn-primary">Submit</button>
