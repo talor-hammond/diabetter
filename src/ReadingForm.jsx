@@ -8,16 +8,26 @@ class ReadingForm extends Component {
             bloodGlucose: "",
             note: ""
         };
+
+        this.updateFormDetails = this.updateFormDetails.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
     };
 
     updateFormDetails(e) {
-        console.log(`Name: ${e.target.name}, Value:; ${e.target.value}`);
-        
-        this.setState({
-            [e.target.name]: e.target.value
-        }, () => {
-            console.log(this.state);
-        });
+        this.setState({ [e.target.name]: e.target.value });
+    };
+
+    onSubmit(e) {
+        e.preventDefault();
+
+        const { bloodGlucose, note } = this.state;
+
+        const reading = {
+            bloodGlucose,
+            note
+        };
+
+        console.log(reading);
     };
 
     render() {
@@ -33,7 +43,7 @@ class ReadingForm extends Component {
                         <input type="text" className="form-control" name="note" id="note" placeholder="7 units of insulin, etc." onChange={(e) => this.updateFormDetails(e)}/>
                     </div>
                     
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-primary" onClick={this.onSubmit}>Submit</button>
 
                 </fieldset>
             </form>
