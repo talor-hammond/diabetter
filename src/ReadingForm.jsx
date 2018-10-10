@@ -5,12 +5,19 @@ class ReadingForm extends Component {
         super(props);
 
         this.state = {
-
+            bloodGlucose: "",
+            note: ""
         };
     };
 
     updateFormDetails(e) {
         console.log(`Name: ${e.target.name}, Value:; ${e.target.value}`);
+        
+        this.setState({
+            [e.target.name]: e.target.value
+        }, () => {
+            console.log(this.state);
+        });
     };
 
     render() {
