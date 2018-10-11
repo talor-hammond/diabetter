@@ -7,20 +7,25 @@ import { connect } from 'react-redux';
 import { Reading } from './Reading';
 
 class Readings extends Component {
-    constructor() {
-        super();
-
-        this.state = {
-            readings: []
-        };
-    };
-
     render() {
+        const { readings } = this.props;
+        console.log(readings);
+
         return (
             <Fragment>
                 <h1>Readings:</h1>
                 <hr />
-                <Reading />
+                {
+                    readings.map((reading, i) => {
+                        return (
+                            <Reading
+                                key={i}
+                                bloodGlucose={reading.bloodGlucose}
+                                note={reading.note}
+                            />
+                        )
+                    })
+                }
             </Fragment>
         );
     };

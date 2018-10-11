@@ -1,9 +1,5 @@
 import React from 'react';
 
-export const Reading = (props) => {
-    console.log(props);
-
-    return (
-        <h1>Here's a reading</h1>
-    );
+export const Reading = ({ bloodGlucose, note }) => {
+    return <h1>{bloodGlucose}, Note: {note}</h1>
 };
