@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
+
+// actions:
+import { addReading } from './actions/readings';
 
 class ReadingForm extends Component {
     constructor(props) {
@@ -13,7 +17,9 @@ class ReadingForm extends Component {
         this.onSubmit = this.onSubmit.bind(this);
     };
 
-    updateFormDetails({ target: { value, name } }) {
+    updateFormDetails(e) {
+        const { name, value } = e.target;
+
         this.setState({ [name]: value });
     };
 
@@ -21,13 +27,14 @@ class ReadingForm extends Component {
         e.preventDefault();
 
         const { bloodGlucose, note } = this.state;
+        const { dispatch } = this.props;
 
         const reading = {
             bloodGlucose,
             note
         };
 
-        console.log(reading);
+        dispatch(addReading(reading));
     };
 
     render() {
@@ -51,4 +58,4 @@ class ReadingForm extends Component {
     };
 };
 
-export default ReadingForm;
+export default connect()(ReadingForm);

@@ -11,8 +11,6 @@ class Readings extends Component {
     };
 
     render() {
-        console.log(this.props);
-
         return (
             <h1>Testing</h1>
         );
