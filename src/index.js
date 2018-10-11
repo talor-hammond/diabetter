@@ -7,9 +7,12 @@ import * as serviceWorker from './serviceWorker';
 // redux
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import readings from './reducers/readings';
+import reducers from './reducers/index';
 
-const store = createStore(readings);
+const store = createStore(
+    reducers,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
     <Provider store={store}>

@@ -19,4 +19,10 @@ class Readings extends Component {
     };
 };
 
-export default connect()(Readings); // connects this component to our store.
+const mapStateToProps = ({ readings }) => {
+    return {
+        readings
+    }
+}
+
+export default connect(mapStateToProps)(Readings); // connects this component to our store.
