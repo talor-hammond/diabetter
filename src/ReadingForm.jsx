@@ -13,8 +13,8 @@ class ReadingForm extends Component {
         this.onSubmit = this.onSubmit.bind(this);
     };
 
-    updateFormDetails(e) {
-        this.setState({ [e.target.name]: e.target.value });
+    updateFormDetails({ target: { value, name } }) {
+        this.setState({ [name]: value });
     };
 
     onSubmit(e) {
