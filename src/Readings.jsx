@@ -1,7 +1,12 @@
-import React,  { Component } from 'react';
+import React, {
+    Component,
+    Fragment
+} from 'react';
 import { connect } from 'react-redux';
 
-class Readings extends Component { 
+import { Reading } from './Reading';
+
+class Readings extends Component {
     constructor() {
         super();
 
@@ -12,7 +17,11 @@ class Readings extends Component {
 
     render() {
         return (
-            <h1>Testing</h1>
+            <Fragment>
+                <h1>Readings:</h1>
+                <hr />
+                <Reading />
+            </Fragment>
         );
     };
 };
