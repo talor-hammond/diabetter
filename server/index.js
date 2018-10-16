@@ -5,13 +5,14 @@ const cors = require('cors');
 
 const app = express();
 
+// Router modules:
+const auth = require('./routes/auth');
+
 // Middleware:
 app.use(cors('*'));
 app.use(bodyParser.json());
 
-// Routes:
-app.get('/ping', (req, res) => {
-  return res.send('pong');
-});
+// Api-routes:
+app.use('/api/v1/auth', auth);
 
 app.listen(process.env.PORT || 8080);
