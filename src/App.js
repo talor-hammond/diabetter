@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 // Components:
-import ReadingForm from './ReadingForm';
-import Readings from './Readings';
+import ReadingForm from './components/ReadingForm';
+import Readings from './components/Readings';
 
 class App extends Component {
   render() {
