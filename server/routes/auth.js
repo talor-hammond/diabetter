@@ -10,11 +10,10 @@ const {
 const token = require('../auth/token');
 
 // Routes:
-router.post('/register', register, token.issue);
+router.post('/register', register, token.issue); // issue(req, res) gets called with register's 'next' param
 
-// Helper-functions:
 function register (req, res, next) {
-    const { username, password } = req.body; // pulling the form-info out of the body of the req.
+    const { username, password } = req.body;
     
     const user = {
         username,
@@ -33,8 +32,14 @@ function register (req, res, next) {
         .catch(err => {
             res.status(500).send({ message: err.message });
         });
-
-    // TODO: If not, hash the password and add the user to the database.
 };
+
+router.get('/username', token.decode, (req, res) => {
+    const { username } = req.user;
+    
+    res.json({
+        username
+    });
+});
 
 module.exports = router;
