@@ -15,7 +15,7 @@ function register (req, res) {
     
     const user = {
         username,
-        hash: password // column is named 'hash' in the db.
+        password
     };
 
     // Checking whether the user exists in our 'users' table:

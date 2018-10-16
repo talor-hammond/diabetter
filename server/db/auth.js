@@ -1,9 +1,16 @@
 const db = require('./connection');
+const hash = require('../auth/hash');
 
 // For creating a user:
-function createUser(user) {
-    return db('users')
-        .insert(user);
+function createUser({ username, password }) {
+    return hash.generate(password)
+        .then(hash => { // after we've waiting for 'generate' to resolve with our user's hashed password.
+            return db('users')
+                .insert({
+                    username,
+                    hash
+                });
+        });
 };
 
 // Checking whether a user exists; returning a bool:
