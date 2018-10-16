@@ -6,11 +6,14 @@ const {
     createUser
 } = require('../db/auth');
 
+// Handling tokens:
+const token = require('../auth/token');
+
 // Routes:
-router.post('/register', register);
+router.post('/register', register, token.issue);
 
 // Helper-functions:
-function register (req, res) {
+function register (req, res, next) {
     const { username, password } = req.body; // pulling the form-info out of the body of the req.
     
     const user = {
@@ -25,7 +28,7 @@ function register (req, res) {
 
             // If the user doesn't exist, add them to the db:
             createUser(user)
-                .then(() => res.status(201).end());
+                .then(() => next()); // token gets issued here?
         })
         .catch(err => {
             res.status(500).send({ message: err.message });

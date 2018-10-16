@@ -19,7 +19,7 @@ function issue(req, res) {
 
 function createToken(user, secret) {
     // const { id, username } = user
-    return jwt.sign( user, secret, { expiresIn: '1d'} );
+    return jwt.sign( user, secret, { expiresIn: '7d'} ); // signs the payload into a jwt.
 };
 
 module.exports = {
