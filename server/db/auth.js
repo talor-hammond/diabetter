@@ -22,7 +22,15 @@ function userExists(username) {
         });
 };
 
+// For getting a particular user by 'username':
+function getUserByUsername(username) {
+    return db('users')
+        .where('username', username)
+        .first();
+};
+
 module.exports = {
     createUser,
-    userExists
+    userExists,
+    getUserByUsername
 };
