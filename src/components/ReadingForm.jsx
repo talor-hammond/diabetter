@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
 // actions:
-import { addReading } from './actions/readings';
+import { addReading } from '../actions/readings';
 
 class ReadingForm extends Component {
     constructor(props) {
