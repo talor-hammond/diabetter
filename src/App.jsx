@@ -10,7 +10,6 @@ class App extends Component {
     return (
       <Router>
         <Fragment>
-          <Route path="/" component={Header} />
           <Route path="/" component={AppDrawer} />
           <Route exact path="/" component={Home} />
           <Route path="/" component={Footer} />
