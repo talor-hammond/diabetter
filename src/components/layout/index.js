@@ -1,9 +1,9 @@
 import Header from './Header';
 import Footer from './Footer';
-import Drawer from './Drawer';
+import AppDrawer from './AppDrawer';
 
 export {
     Header,
     Footer,
-    Drawer
+    AppDrawer
 };
