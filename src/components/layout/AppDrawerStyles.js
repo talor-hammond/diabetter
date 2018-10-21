@@ -3,7 +3,7 @@ const drawerWidth = 240;
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    height: 440,
+    minHeight: '100vh',
     zIndex: 1,
     overflow: 'hidden',
     position: 'relative',
@@ -11,11 +11,7 @@ const styles = theme => ({
     width: '100%',
   },
   appBar: {
-    position: 'absolute',
-    marginLeft: drawerWidth,
-    [theme.breakpoints.up('md')]: {
-      width: `calc(100% - ${drawerWidth}px)`,
-    },
+    zIndex: theme.zIndex.drawer + 1
   },
   navIconHide: {
     [theme.breakpoints.up('md')]: {

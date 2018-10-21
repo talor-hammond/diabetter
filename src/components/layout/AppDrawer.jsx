@@ -37,7 +37,7 @@ class AppDrawer extends Component {
 
         return (
           <div className={classes.root}>
-            <AppBar className={classes.appBar}>
+            <AppBar position='absolute' className={classes.appBar}>
               <Toolbar>
                 <IconButton
                   color="inherit"
@@ -48,7 +48,7 @@ class AppDrawer extends Component {
                   <Menu />
                 </IconButton>
                 <Typography variant="h6" color="inherit" noWrap>
-                  Responsive drawer
+                  diabetter
                 </Typography>
               </Toolbar>
             </AppBar>
