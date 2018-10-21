@@ -3,7 +3,7 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 
 // Core-components:
 import { Header, Footer } from './components/layout';
-import { Home } from './components/home/Home';
+import Home from './components/home/Home';
 
 class App extends Component {
   render() {
